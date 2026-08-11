@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Invitación de casamiento de Fernanda & Stefany - 16 de octubre">
+    <title>Nuestra boda</title>
+    <meta name="author" content="lucia mortarotti">
+    <link rel="icon" type="image/svg+xml" href="IMG/MoñoS.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="IMG/fondo.jpg" alt="" class="header-bg" aria-hidden="true">
+        <h1>Fernanda &amp; Stefany</h1>
+        <h2>¡ NOS CASAMOS !</h2>
+    </header>
+
+    <main>
+
+        <section id="intro">
+            <h3>LLEGÓ EL GRAN DÍA</h3>
+            <p>Queremos celebrar junto a vos este momento tan especial para nosotras.</p>
+
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="numero" id="cd-dias">00</span>
+                    <span class="etiqueta">Dias</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="numero" id="cd-horas">00</span>
+                    <span class="etiqueta">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="numero" id="cd-minutos">00</span>
+                    <span class="etiqueta">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="numero" id="cd-segundos">00</span>
+                    <span class="etiqueta">Segundos</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="ceremonia">
+            <h3>CEREMONIA &amp; CELEBRACIÓN</h3>
+
+            <img src="IMG/anillo.jpg" alt="Anillos de casamiento" class="icono">
+
+            <address>
+                <strong>Haras Los Vagones</strong>
+            </address>
+
+            <p>Te esperamos el</p>
+
+            <div class="fecha-hora">
+                <time datetime="2026-10-16">16 OCT</time>
+                <span class="divider" aria-hidden="true"></span>
+                <time datetime="19:00">19:00 hs</time>
+            </div>
+
+            <a href="https://www.google.com/maps/place/Haras+Los+Wagons/@-34.9892879,-56.2148815,14z/data=!4m6!3m5!1s0x95a1d1804707f00d:0x30fde4205a107e56!8m2!3d-34.7805839!4d-56.2934917!16s%2Fg%2F1thsbjm3"
+               target="_blank" rel="noopener noreferrer" class="btn">
+               Ver ubicación
+            </a>
+        </section>
+
+        <section id="dresscode">
+            <h3>DRESS CODE</h3>
+            <img src="IMG/MoñoS.svg" alt="Moño" class="icono">
+            <p>Para acompañarnos en esta celebración, les pedimos asistir con vestimenta formal.</p>
+        </section>
+
+        <section id="regalo">
+            <img src="IMG/etiqueta.jpg" alt="Etiqueta de regalo" class="icono">
+            <p><strong>¡El mejor regalo es tu presencia!</strong></p>
+            <p>Si deseás hacernos otro regalo, podés colaborar con nuestra Luna de Miel.</p>
+
+            <div class="cuenta-box">
+                <p><strong>OCA Blue</strong></p>
+                <ul>
+                    <li>
+                        <span>Cuenta en dólares: <strong>8978070</strong></span>
+                        <button type="button" class="btn-copy" data-copy="8978070" aria-label="Copiar cuenta en dólares">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </li>
+                    <li>
+                        <span>Cuenta en pesos: <strong>8978087</strong></span>
+                        <button type="button" class="btn-copy" data-copy="8978087" aria-label="Copiar cuenta en pesos">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </li>
+                    <li>
+                        <span>Titular: <strong>Stefany Natalia Moreira Pacheco</strong></span>
+                        <button type="button" class="btn-copy" data-copy="Stefany Natalia Moreira Pacheco" aria-label="Copiar titular">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="confirmar">
+            <h3>CONFIRMAR ASISTENCIA</h3>
+            <p>Confirmá tu asistencia antes del 1 de octubre de 2026.</p>
+
+            <form id="form-rsvp" action="" method="post">
+
+                <fieldset>
+                    <legend class="sr-only">¿Vas a asistir?</legend>
+
+                    <div class="radio-option">
+                        <input type="radio" id="si" name="concurrencia" value="si" required>
+                        <label for="si">Sí, allí estaré</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="no" name="concurrencia" value="no">
+                        <label for="no">No podré asistir</label>
+                    </div>
+                </fieldset>
+
+                <div id="campo-cantidad">
+                    <label for="cantidad" class="sr-only">¿Vas solo/a o acompañado/a?</label>
+                    <select id="cantidad" name="cantidad" required>
+                        <option value="" disabled selected>Seleccioná una opción</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+
+                <label for="nombre" class="sr-only">Nombre y apellido</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    required
+                    placeholder="Escriba su nombre">
+
+                <label for="alimentos" class="sr-only">Intolerancias o alergias alimentarias</label>
+                <input
+                    type="text"
+                    id="alimentos"
+                    name="alimentos"
+                    placeholder="Intolerancias o alergias alimentarias">
+
+                <label for="cancion" class="sr-only">Canción que no puede faltar</label>
+                <input
+                    type="text"
+                    id="cancion"
+                    name="cancion"
+                    placeholder="Dejanos una canción que no pueda faltar">
+
+                <button type="submit">Confirmar asistencia</button>
+
+            </form>
+
+            <p id="form-mensaje" class="form-mensaje" role="status" hidden>
+                ¡Gracias por confirmar! Te esperamos.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <h3>Te esperamos !</h3>
+        <h4>Fernanda &amp; Stefany</h4>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

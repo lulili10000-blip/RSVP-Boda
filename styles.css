@@ -1,0 +1,520 @@
+/* ==========================================================================
+   FUENTES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* ==========================================================================
+   VARIABLES / CUSTOM PROPERTIES
+   ========================================================================== */
+:root {
+    --verde-oliva: #94a878;
+    --verde-claro: #c7d3ac;
+    --verde-suave: #e4ead6;
+    --crema: #faf8f2;
+    --blanco: #ffffff;
+    --texto-oscuro: #4a4a3a;
+    --texto-claro: #6f6f5c;
+
+    --font-script: 'Tangerine', cursive;
+    --font-body: 'Cormorant Garamond', serif;
+
+    --container-width: 1280px;
+    --radius: 8px;
+    --transition: 0.3s ease;
+}
+
+/* ==========================================================================
+   RESET BÁSICO
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--crema);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+    font-size: 18px;
+    overflow-x: hidden; /* evita scroll horizontal por las secciones full-bleed */
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Oculta visualmente un elemento pero lo mantiene accesible para lectores
+   de pantalla (labels y legend del formulario, por ejemplo) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ==========================================================================
+   HEADER - imagen de fondo + espaciado
+   ========================================================================== */
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100svh; /* usa la altura visible real en mobile (sin la barra del navegador) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 16px;
+}
+
+.header-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom; /* muestra más la parte de abajo (las hojas) */
+    z-index: -1;
+}
+
+header h1 {
+    font-family: var(--font-script);
+    font-size: clamp(3.5rem, 16vw, 7rem);
+    font-weight: 400;
+    color: var(--texto-oscuro);
+    line-height: 1.1;
+    word-break: break-word;
+}
+
+header h2 {
+    margin-top: 20px;
+    font-family: var(--font-body);
+    font-size: clamp(1.15rem, 3.5vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--texto-claro);
+}
+
+/* ==========================================================================
+   CONTENEDOR PRINCIPAL (1280px centrado)
+   ========================================================================== */
+main {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 110px;
+    padding: 90px 0;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   SECCIONES GENERALES
+   ========================================================================== */
+main > section {
+    width: 100%;
+    max-width: 640px;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 22px;
+}
+
+section h3 {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--texto-oscuro);
+    margin-bottom: 8px;
+    line-height: 1.15;
+}
+
+section p {
+    color: var(--texto-claro);
+    font-size: clamp(1.1rem, 4.8vw, 1.35rem);
+}
+
+.icono {
+    width: clamp(170px, 45vw, 260px);
+    height: auto;
+    margin: 12px auto;
+    mix-blend-mode: multiply; /* disimula el fondo blanco sobre fondos claros */
+}
+
+/* ==========================================================================
+   INTRO / COUNTDOWN
+   ========================================================================== */
+#intro {
+    gap: 48px;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 380px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--verde-oliva);
+    color: var(--blanco);
+    width: 100%;
+    aspect-ratio: 1 / 0.9;
+    border-radius: var(--radius);
+}
+
+.countdown-item .numero {
+    font-size: clamp(1.4rem, 6vw, 2.5rem);
+    font-weight: 700;
+}
+
+.countdown-item .etiqueta {
+    font-size: clamp(0.6rem, 2.3vw, 0.9rem);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   CEREMONIA
+   ========================================================================== */
+#ceremonia address {
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+.fecha-hora {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 8px 0;
+}
+
+.fecha-hora time {
+    font-size: clamp(1.5rem, 5.5vw, 1.9rem);
+    font-weight: 600;
+}
+
+.fecha-hora .divider {
+    width: 1px;
+    height: 36px;
+    background-color: var(--texto-claro);
+}
+
+/* ==========================================================================
+   SISTEMA DE BOTONES REUTILIZABLE
+   ========================================================================== */
+.btn,
+button[type="submit"] {
+    display: inline-block;
+    background-color: var(--verde-oliva);
+    color: var(--blanco);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 32px;
+    margin-top: 20px; /* más separación respecto al contenido de arriba */
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn:hover,
+button[type="submit"]:hover {
+    background-color: #7d9463;
+    transform: translateY(-2px);
+}
+
+.btn:active,
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: var(--verde-oliva);
+    border: 2px solid var(--verde-oliva);
+}
+
+.btn--outline:hover {
+    background-color: var(--verde-oliva);
+    color: var(--blanco);
+}
+
+/* ==========================================================================
+   REGALO - sección full-bleed (ocupa TODO el ancho de pantalla)
+   ========================================================================== */
+#regalo {
+    width: 100%;
+    max-width: 100%;
+    background-color: var(--verde-suave);
+    padding: 90px 24px;
+}
+
+.cuenta-box {
+    margin-top: 16px;
+    padding: 24px 32px;
+    border: 1px solid var(--verde-oliva);
+    border-radius: var(--radius);
+    background-color: var(--verde-claro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.cuenta-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.cuenta-box li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.cuenta-box li span {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+.cuenta-box strong {
+    color: var(--texto-oscuro);
+}
+
+.btn-copy {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-top: 2px;
+    background-color: transparent;
+    color: var(--verde-oliva);
+    border: 1px solid var(--verde-oliva);
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.btn-copy:hover {
+    background-color: var(--verde-oliva);
+    color: var(--blanco);
+}
+
+.btn-copy.copiado {
+    background-color: var(--verde-oliva);
+    color: var(--blanco);
+}
+
+/* ==========================================================================
+   FORMULARIO - CONFIRMAR ASISTENCIA
+   ========================================================================== */
+#confirmar form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    margin-top: 24px;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+fieldset legend {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+fieldset label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+input[type="radio"] {
+    accent-color: var(--verde-oliva);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    width: 100%;
+    max-width: 420px;
+    padding: 12px 16px;
+    border: 1px solid var(--verde-claro);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: var(--blanco);
+    color: var(--texto-oscuro);
+    transition: border-color var(--transition);
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--verde-oliva);
+}
+
+input[type="text"]::placeholder {
+    color: #a8a894;
+}
+
+select {
+    width: 100%;
+    max-width: 420px;
+    padding: 12px 16px;
+    border: 1px solid var(--verde-claro);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: var(--blanco);
+    color: var(--texto-oscuro);
+    cursor: pointer;
+    transition: border-color var(--transition);
+    /* flechita custom para reemplazar la del navegador */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a4a3a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 18px;
+}
+
+/* El div que envuelve el select (para poder ocultarlo con el parámetro de
+   la URL) necesita su propio ancho, si no el select se achica a su
+   contenido en vez de ocupar el ancho completo del formulario */
+#campo-cantidad {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Sin esto, el display:flex de arriba le gana a la regla interna del
+   navegador [hidden]{display:none;} y el div nunca llega a ocultarse
+   aunque JS le ponga el atributo hidden correctamente. */
+#campo-cantidad[hidden] {
+    display: none;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--verde-oliva);
+}
+
+select:invalid {
+    color: #a8a894; /* mismo tono que el placeholder mientras no se eligió opción */
+}
+
+.form-mensaje {
+    margin-top: 24px;
+    padding: 20px 24px;
+    background-color: var(--verde-suave);
+    border: 1px solid var(--verde-oliva);
+    border-radius: var(--radius);
+    color: var(--texto-oscuro);
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   FOOTER - full-bleed verde + espaciado respecto al botón de confirmar
+   ========================================================================== */
+footer {
+    width: 100%;
+    margin-top: 100px;
+    background-color: var(--verde-oliva);
+    text-align: center;
+    padding: 90px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+footer h3 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blanco);
+}
+
+footer h4 {
+    font-family: var(--font-script);
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--blanco);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+}
